@@ -24,3 +24,6 @@ class Shortener(models.Model):
             self.delete()
         self.last_accessed = timezone.now()
         super().save(*args, **kwargs)
+
+
+

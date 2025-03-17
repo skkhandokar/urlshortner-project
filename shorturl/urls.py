@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import home_view, redirect_url_view
+from .views import URLShortenerView, URLRedirectView
+
 urlpatterns = [
-    path('', home_view, name='home'),
-    path('<str:shortened_part>', redirect_url_view, name='redirect'),
+    path('shorten/', URLShortenerView.as_view(), name='home'),  # Home page to create short URLs
+    path('<str:short_url>/', URLRedirectView.as_view(), name='redirect'),  # Redirection based on short URL
 ]
